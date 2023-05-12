@@ -16,21 +16,59 @@ function Pokemons() {
   const [pokemons, setPokemons] = useState([]);
   const [showPokemons, setShowPokemons] = useState([]); // Filtered array of pokemons (search)
   const [type, setType] = useState(null);
+  const [gen, setGen] = useState(null);
 
   // function to get all the pokemons from the API
   const getPokemons = async () => {
     try {
+      let firstPoke, lastPoke;
       let endpoints = [];
-      for (let i = 1; i < 152; i++) {
-        // loop through all pokemon endpoints
-        endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
+
+      // Determine the range of Pokémon based on the selected generation
+      if (gen === 1) {
+        firstPoke = 1;
+        lastPoke = 151;
+      } else if (gen === 2) {
+        firstPoke = 152;
+        lastPoke = 251;
+      } else if (gen === 3) {
+        firstPoke = 252;
+        lastPoke = 386;
+      } else if (gen === 4) {
+        firstPoke = 387;
+        lastPoke = 493;
+      } else if (gen === 5) {
+        firstPoke = 494;
+        lastPoke = 649;
+      } else if (gen === 6) {
+        firstPoke = 650;
+        lastPoke = 721;
+      } else if (gen === 7) {
+        firstPoke = 722;
+        lastPoke = 809;
+      } else if (gen === 8) {
+        firstPoke = 810;
+        lastPoke = 898;
+      } else if (gen === 9) {
+        firstPoke = 899;
+        lastPoke = 1281;
+      } else {
+        firstPoke = 1;
+        lastPoke = 151;
       }
-      const response = await axios.all(
-        endpoints.map((endpoint) => axios.get(endpoint)) // make requests for all endpoints
+
+      for (let i = firstPoke; i <= lastPoke; i++) {
+        endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
+      }
+
+      const responses = await axios.all(
+        endpoints.map((endpoint) => axios.get(endpoint))
       );
-      console.log(response);
-      setPokemons(response); // set the state of all the pokemons
-      setShowPokemons(response); // set the state of the filtered pokemons
+
+      const pokemonData = responses.map((res) => res.data);
+      console.log(pokemonData);
+      setPokemons(pokemonData);
+      setShowPokemons(pokemonData);
     } catch (error) {
       console.log(error);
     }
@@ -39,15 +77,15 @@ function Pokemons() {
   // use effect to call the function to get all the pokemons when the component mounts
   useEffect(() => {
     getPokemons();
-  }, []);
+  }, [gen]);
 
   // function to search for pokemons based on name and type
   const searchPokemons = (query) => {
     const filteredPokemons = pokemons.filter(
       (pokemon) =>
-        pokemon.data.name.toLowerCase().includes(query.toLowerCase()) &&
+        pokemon.name.toLowerCase().includes(query.toLowerCase()) &&
         (type === null ||
-          pokemon.data.types[0].type.name.toLowerCase() === type.toLowerCase())
+          pokemon.types[0].type.name.toLowerCase() === type.toLowerCase())
     );
     setShowPokemons(filteredPokemons);
   };
@@ -60,12 +98,52 @@ function Pokemons() {
     } else {
       const filteredPokemons = pokemons.filter(
         (pokemon) =>
-          pokemon.data.types[0].type.name.toLowerCase() === types.toLowerCase() // show only the pokemons with the type selected
+          pokemon.types[0].type.name.toLowerCase() === types.toLowerCase() // show only the pokemons with the type selected
       );
       setShowPokemons(filteredPokemons); // set the state of the filtered pokemons
     }
   };
+  // function to filter pokemons by gen
+  const filterByGen = (gen) => {
+    setGen(gen); // set the state of the generation
+    if (gen === null) {
+      setShowPokemons(pokemons); // show all the pokemons
+    } else {
+      let firstPoke, lastPoke;
+      if (gen === 1) {
+        // Show 1st Gen Pokemons
+        firstPoke = 0;
+        lastPoke = 151;
+      } else if (gen === 2) {
+        firstPoke = 151;
+        lastPoke = 251;
+      } else if (gen === 3) {
+        firstPoke = 251;
+        lastPoke = 386;
+      } else if (gen === 4) {
+        firstPoke = 386;
+        lastPoke = 493;
+      } else if (gen === 5) {
+        firstPoke = 493;
+        lastPoke = 649;
+      } else if (gen === 6) {
+        firstPoke = 649;
+        lastPoke = 721;
+      } else if (gen === 7) {
+        firstPoke = 721;
+        lastPoke = 809;
+      } else if (gen === 8) {
+        firstPoke = 809;
+        lastPoke = 898;
+      } else if (gen === 9) {
+        firstPoke = 898;
+        lastPoke = pokemons.length; // Set the lastPoke to the total number of pokemons
+      }
 
+      const filteredPokemons = pokemons.slice(firstPoke, lastPoke);
+      setShowPokemons(filteredPokemons); // set the state of the filtered pokemons
+    }
+  };
   // array of types to filter
   const types = [
     "normal",
@@ -88,6 +166,8 @@ function Pokemons() {
     "fairy",
   ];
 
+  const gens = [1, 2, 3, 4, 5, 6, 7, 8];
+
   return (
     <StyledPokemons>
       <NavBar />
@@ -100,13 +180,33 @@ function Pokemons() {
       <SearchBar searchPokemons={searchPokemons} />
 
       <TypeButtonContainer>
+        <div className="button-gens-position">
+          <StyledTypeButton onClick={() => filterByGen(null)}>
+            All
+          </StyledTypeButton>
+          {gens.map((genItem) => (
+            <StyledTypeButton
+              key={genItem}
+              onClick={() => filterByGen(genItem)}
+              active={genItem === gen}
+            >
+              {genItem}
+            </StyledTypeButton>
+          ))}
+        </div>
+      </TypeButtonContainer>
+      <TypeButtonContainer>
         <div className="button-types-position">
           <StyledTypeButton onClick={() => filterByType(null)}>
             All
           </StyledTypeButton>
-          {types.map((type) => (
-            <StyledTypeButton key={type} onClick={() => filterByType(type)}>
-              {type}
+          {types.map((typeItem) => (
+            <StyledTypeButton
+              key={typeItem}
+              onClick={() => filterByType(typeItem)}
+              active={typeItem === type}
+            >
+              {typeItem}
             </StyledTypeButton>
           ))}
         </div>
@@ -117,10 +217,10 @@ function Pokemons() {
           showPokemons.map((pokemon, index) => (
             <PokemonCard
               key={index}
-              name={pokemon.data.name}
-              image={pokemon.data.sprites.front_default}
-              imageShiny={pokemon.data.sprites.front_shiny}
-              types={pokemon.data.types}
+              name={pokemon.name}
+              image={pokemon.sprites.front_default}
+              imageShiny={pokemon.sprites.front_shiny}
+              types={pokemon.types}
             />
           ))
         ) : (
