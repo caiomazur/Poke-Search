@@ -7,6 +7,7 @@ export const StyledPokemonCard = styled.div`
   flex-wrap: wrap;
 
   .poke-card {
+    background-color: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,6 +15,11 @@ export const StyledPokemonCard = styled.div`
     margin: 1em;
     border: 1px solid black;
     border-radius: 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .poke-card:hover {
+    transform: scale(1.05);
   }
 
   .poke-image {

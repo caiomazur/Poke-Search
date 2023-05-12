@@ -9,6 +9,7 @@ import {
 } from "../components/styled/Button.styled";
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
+import { StyledPokemons } from "../components/styled/Pokemons.styled";
 
 function Pokemons() {
   // initialize states
@@ -88,8 +89,14 @@ function Pokemons() {
   ];
 
   return (
-    <main id="pokemons-page">
+    <StyledPokemons>
       <NavBar />
+
+      <div className="main-title">
+        <h1>Pokédex</h1>
+        <h3>Search by name or type</h3>
+      </div>
+
       <SearchBar searchPokemons={searchPokemons} />
 
       <TypeButtonContainer>
@@ -112,6 +119,7 @@ function Pokemons() {
               key={index}
               name={pokemon.data.name}
               image={pokemon.data.sprites.front_default}
+              imageShiny={pokemon.data.sprites.front_shiny}
               types={pokemon.data.types}
             />
           ))
@@ -119,7 +127,7 @@ function Pokemons() {
           <Spinner />
         )}
       </StyledPokemonList>
-    </main>
+    </StyledPokemons>
   );
 }
 
