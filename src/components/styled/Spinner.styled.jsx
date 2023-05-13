@@ -6,7 +6,7 @@ export const StyledSpinner = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 40vh;
     width: 100vw;
   }
   

@@ -4,9 +4,9 @@ import "./App.css";
 import { GlobalStyled } from "./components/styled/Global.styled";
 import Home from "./pages/Home";
 import Pokemons from "./pages/Pokemons";
+import PokemonDetails from "./pages/PokemonDetails";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -16,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pokemons" element={<Pokemons />} />
+          <Route path="/:name" element={<PokemonDetails />} />
         </Routes>
       </BrowserRouter>
     </div>

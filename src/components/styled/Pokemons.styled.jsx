@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledPokemons = styled.main`
   background-image: url("/src/assets/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y;
-  
+
   .main-title {
     color: #000000;
     text-align: center;
@@ -22,5 +22,10 @@ export const StyledPokemons = styled.main`
   .main-title h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .warning {
+    margin-top: 2rem;
+    font-size: 3rem;
   }
 `;

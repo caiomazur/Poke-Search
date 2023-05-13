@@ -28,6 +28,7 @@ export const StyledPokemonCard = styled.div`
 
   .poke-info {
     font-size: 2rem;
+    text-decoration: none;
   }
 `;
 
@@ -38,4 +39,9 @@ export const StyledPokemonList = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  .link {
+    text-decoration: none;
+    color: #000000;
+  }
 `;

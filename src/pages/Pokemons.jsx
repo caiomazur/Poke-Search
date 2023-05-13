@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import PokemonCard from "../components/PokemonCard";
 import Spinner from "../components/Spinner";
 import { StyledPokemonList } from "../components/styled/PokemonCard.styled";
@@ -96,10 +97,12 @@ function Pokemons() {
     if (types === null) {
       setShowPokemons(pokemons); // show all the pokemons
     } else {
-      const filteredPokemons = pokemons.filter(
-        (pokemon) =>
-          pokemon.types[0].type.name.toLowerCase() === types.toLowerCase() // show only the pokemons with the type selected
-      );
+      const filteredPokemons = pokemons.filter((pokemon) => {
+        const pokemonTypes = pokemon.types.map((type) =>
+          type.type.name.toLowerCase()
+        );
+        return pokemonTypes.includes(types.toLowerCase()); // show the pokemons with the selected type in either primary or secondary type
+      });
       setShowPokemons(filteredPokemons); // set the state of the filtered pokemons
     }
   };
@@ -181,9 +184,9 @@ function Pokemons() {
 
       <TypeButtonContainer>
         <div className="button-gens-position">
-          <StyledTypeButton onClick={() => filterByGen(null)}>
+          {/*           <StyledTypeButton onClick={() => filterByGen(null)}>
             All
-          </StyledTypeButton>
+          </StyledTypeButton> */}
           {gens.map((genItem) => (
             <StyledTypeButton
               key={genItem}
@@ -215,13 +218,18 @@ function Pokemons() {
       <StyledPokemonList>
         {showPokemons.length > 0 ? (
           showPokemons.map((pokemon, index) => (
-            <PokemonCard
+            <Link
+              className="link"
               key={index}
-              name={pokemon.name}
-              image={pokemon.sprites.front_default}
-              imageShiny={pokemon.sprites.front_shiny}
-              types={pokemon.types}
-            />
+              to={`/${pokemon.name}`} // Pass the name as a route parameter
+            >
+              <PokemonCard
+                name={pokemon.name}
+                image={pokemon.sprites.front_default}
+                imageShiny={pokemon.sprites.front_shiny}
+                types={pokemon.types}
+              />
+            </Link>
           ))
         ) : (
           <Spinner />
