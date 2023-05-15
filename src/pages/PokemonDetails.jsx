@@ -7,12 +7,13 @@ import Spinner from "../components/Spinner";
 import PokemonCard from "../components/PokemonCard";
 
 function PokemonDetails() {
-  const [pokemon, setPokemon] = useState(null);
-  const { name } = useParams();
-  const [isHovered, setIsHovered] = useState(false);
-  const [evolutionChain, setEvolutionChain] = useState([]);
-  const [description, setDescription] = useState("");
+  const [pokemon, setPokemon] = useState(null); // State variable to store the details of a single Pokémon
+  const { name } = useParams(); // Extracts the "name" parameter from the URL
+  const [isHovered, setIsHovered] = useState(false); // State variable to track the hover state of an image
+  const [evolutionChain, setEvolutionChain] = useState([]); // State variable to store the evolution chain of the Pokémon
+  const [description, setDescription] = useState(""); // State variable to store the English description of the Pokémon
 
+  // Function to fetch the image of an evolution in the evolution chain
   const getEvolutionImage = async (evolution) => {
     try {
       const response = await axios.get(
@@ -29,12 +30,13 @@ function PokemonDetails() {
     }
   };
 
+  // Function to fetch the details of a single Pokémon
   const getSinglePokemon = async () => {
     try {
       const response = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${name}`
       );
-      setPokemon(response.data);
+      setPokemon(response.data); // Set the fetched Pokémon data
 
       const speciesResponse = await axios.get(
         `https://pokeapi.co/api/v2/pokemon-species/${response.data.id}`
@@ -76,13 +78,14 @@ function PokemonDetails() {
         }
       }
 
-      setEvolutionChain(evolutionChain);
-      setDescription(getEnglishDescription(speciesData));
+      setEvolutionChain(evolutionChain); // Set the fetched evolution chain
+      setDescription(getEnglishDescription(speciesData)); // Set the English description
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Function to get the English description from the species data
   const getEnglishDescription = (speciesData) => {
     const englishEntry = speciesData.flavor_text_entries.find(
       (entry) => entry.language.name === "en"
@@ -108,28 +111,35 @@ function PokemonDetails() {
 
       <StyledSinglePoke>
         {pokemon ? (
-          <div className="pokemon-container">
-            <h1 className="single-poke-title">{pokemon.name}</h1>
-            <img
-              className="single-poke-img"
-              src={
-                isHovered
-                  ? pokemon.sprites.front_shiny
-                  : pokemon.sprites.front_default
-              }
-              alt={`${name}-image`}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
-            <article className="poke-info">
-              <h4>
-                Type:
-                {pokemon.types.map((type) => (
-                  <span key={type.slot}> {type.type.name} </span>
-                ))}
-              </h4>
-              <p>{description}</p> {/* Display the Pokémon description here */}
-            </article>
+          <div className="pokedex">
+            <div className="pokedex-screen">
+              <div id="main-poke">
+                <h1 className="single-poke-title">{pokemon.name}</h1>
+                <img
+                  className="single-poke-img"
+                  src={
+                    isHovered
+                      ? pokemon.sprites.front_shiny
+                      : pokemon.sprites.front_default
+                  }
+                  alt={`${name}-image`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+
+                <h4 className="type-info">
+                  Type:
+                  {pokemon.types.map((type) => (
+                    <span key={type.slot}> {type.type.name} </span>
+                  ))}
+                </h4>
+
+                <article className="poke-info">
+                  <p>{description}</p>{" "}
+                  {/* Display the Pokémon description here */}
+                </article>
+              </div>
+            </div>
 
             {evolutionChain.length > 0 && (
               <div className="evolution-chain">
