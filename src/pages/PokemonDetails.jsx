@@ -111,54 +111,60 @@ function PokemonDetails() {
 
       <StyledSinglePoke>
         {pokemon ? (
-          <div className="pokedex">
-            <div className="pokedex-screen">
-              <div id="main-poke">
-                <h1 className="single-poke-title">{pokemon.name}</h1>
-                <img
-                  className="single-poke-img"
-                  src={
-                    isHovered
-                      ? pokemon.sprites.front_shiny
-                      : pokemon.sprites.front_default
-                  }
-                  alt={`${name}-image`}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                />
+          <section className="pokedex-page">
+            <section className="gameboy">
+              <div className="pokedex-screen">
+                <div id="main-pokemon">
+                  <h4><span className="main-pokemon-title">{pokemon.name}</span></h4>
+                  <img
+                    className="main-pokemon-img"
+                    src={
+                      isHovered
+                        ? pokemon.sprites.front_shiny
+                        : pokemon.sprites.front_default
+                    }
+                    alt={`${name}-image`}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  />
 
-                <h4 className="type-info">
-                  Type:
-                  {pokemon.types.map((type) => (
-                    <span key={type.slot}> {type.type.name} </span>
-                  ))}
-                </h4>
-
-                <article className="poke-info">
-                  <p>{description}</p>{" "}
-                  {/* Display the Pokémon description here */}
-                </article>
+                  <article className="description-info">
+                    <p>{description}</p>{" "}
+                    {/* Display the Pokémon description here */}
+                  </article>
+                </div>
               </div>
-            </div>
+            </section>
 
-            {evolutionChain.length > 0 && (
-              <div className="evolution-chain">
-                <h2>Evolution Chain</h2>
-                {evolutionChain.map((evolution) => (
-                  <div
-                    key={evolution.species.name}
-                    className="evolution-container"
-                  >
-                    <img
-                      src={evolution.imageSrc}
-                      alt={evolution.species.name}
-                    />
-                    <h3>{evolution.species.name}</h3>
+            <section className="additional-info">
+
+            <h2 className="add-info-title">Evolution Line</h2>
+  
+              {evolutionChain.length > 0 && (
+                <div className="evolution-chain-container">
+                  
+                    {evolutionChain.map((evolution) => (
+                      <div
+                        key={evolution.species.name}
+                        className="evolution-pokemon"
+                      >
+                        <img
+                          src={evolution.imageSrc}
+                          alt={evolution.species.name}
+                        />
+                        <h3 className="evolution-name">{evolution.species.name}</h3>
+                      </div>
+                    ))}
                   </div>
+              )}
+            {/*   <h4 className="type-info">
+                Type:
+                {pokemon.types.map((type) => (
+                  <span key={type.slot}> {type.type.name} </span>
                 ))}
-              </div>
-            )}
-          </div>
+              </h4> */}
+            </section>
+          </section>
         ) : (
           <Spinner />
         )}

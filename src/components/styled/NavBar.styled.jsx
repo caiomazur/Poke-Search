@@ -2,16 +2,19 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   width: 100vw;
-  margin-bottom: 1rem;
+
   background-color: #000000;
 
 
   ul {
-    height: 8vh;
+    height: 7vh;
     list-style: none;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: 3px solid #0075BE;
     
   }
 
