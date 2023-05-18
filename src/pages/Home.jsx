@@ -24,7 +24,7 @@ function Home() {
             <Link to="/pokemons">
               {" "}
               <img
-                src="/public/images/pokemonIcon3.png"
+                src="/images/pokemonIcon3.png"
                 alt="Poké-Search-Icon"
                 className="poke-search-icon"
               />
@@ -32,7 +32,7 @@ function Home() {
             <Link to="/pokemons">
               {" "}
               <img
-                src="/public/images/pokemonIcon2.png"
+                src="/images/pokemonIcon2.png"
                 alt="Poké-Search-Icon"
                 className="poke-search-icon"
               />
@@ -50,7 +50,7 @@ function Home() {
           </article>
           <Link to="/pokemons">
             <img
-              src="/public/images/pokemonIcon5.png"
+              src="/images/pokemonIcon5.png"
               alt="Pokedéx-Icon"
               className="pikachu-back-icon"
             />

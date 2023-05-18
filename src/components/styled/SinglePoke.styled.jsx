@@ -73,6 +73,19 @@ export const StyledSinglePoke = styled.main`
     padding: 0.5rem 1rem;
     border-radius: 30%;
     border: 1px solid #0075be;
+    animation: jump 0.5s infinite alternate;
+  }
+
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
   .description-info {
     background-image: url("/images/text-box-pokmon.png");

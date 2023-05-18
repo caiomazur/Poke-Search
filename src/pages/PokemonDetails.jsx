@@ -13,6 +13,8 @@ function PokemonDetails() {
   const [isHovered, setIsHovered] = useState(false); // State variable to track the hover state of an image
   const [evolutionChain, setEvolutionChain] = useState([]); // State variable to store the evolution chain of the Pokémon
   const [description, setDescription] = useState(""); // State variable to store the English description of the Pokémon
+  const [isJumping, setIsJumping] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false); // State variable to track if the image is flipped
 
   // Function to fetch the image of an evolution in the evolution chain
   const getEvolutionImage = async (evolution) => {
@@ -100,10 +102,16 @@ function PokemonDetails() {
 
   const handleMouseEnter = () => {
     setIsHovered(true);
+    setIsJumping(true);
   };
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    setIsJumping(false);
+  };
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
   };
 
   return (
@@ -123,24 +131,28 @@ function PokemonDetails() {
             </StyledMainTitle>
             <section className="gameboy">
               <div className="pokedex-screen">
-                <div id="main-pokemon">
+                <div className="main-pokemon">
                   <h4>
                     <span className="main-pokemon-title">{pokemon.name}</span>
                   </h4>
                   <img
-                    className="main-pokemon-img"
+                    className={`main-pokemon-img ${
+                      isJumping ? "isJumping" : ""
+                    }`}
                     src={
-                      isHovered
+                      isFlipped && pokemon.sprites.back_default
+                        ? pokemon.sprites.back_default
+                        : isHovered
                         ? pokemon.sprites.front_shiny
                         : pokemon.sprites.front_default
                     }
                     alt={`${name}-image`}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
+                    onClick={handleClick}
                   />
-
                   <article className="description-info">
-                    <p>{description}</p>{" "}
+                    <p>{description}</p>
                     {/* Display the Pokémon description here */}
                   </article>
                 </div>
