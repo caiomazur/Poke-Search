@@ -2,30 +2,61 @@ import styled from "styled-components";
 
 export const StyledPokemons = styled.main`
   background-image: url("/src/assets/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
-  background-repeat: repeat-y;
+  background-repeat: repeat-y repeat-x;
 
-  .main-title {
-    color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .pokemons-page {
+    width: 90vw;
+    background-color: rgba(223, 223, 223, 0.5);
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .search-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttons-title-gen {
+    font-family: 'Press Start 2P', cursive;
+    width: 5vw;
     text-align: center;
-  }
-  .main-title h1:hover {
-    text-shadow: 20px 20px 0px #fb1b1b, 30px 30px 0px #ffcc00,
-      40px 40px 0px rgb(0 117 190);
-    transition: all ease-in-out 250ms;
-  }
-  .main-title h1 {
-    font-size: 6rem;
-    font-weight: bold;
-    margin-bottom: 3rem;
+    margin-left: 6rem;
+    font-size: 1.2rem;
   }
 
-  .main-title h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  .buttons-title-type {
+    font-family: 'Press Start 2P', cursive;
+    width: 5vw;
+    text-align: center;
+    margin-left: 6rem;
+    font-size: 1.2rem;
+
   }
 
   .warning {
     margin-top: 2rem;
     font-size: 3rem;
+  }
+
+  .buttons-section {
+    background-image: url("/src/assets/text-box-pokmon.png");
+    background-size: 73% 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4rem 1rem 4rem 0;
   }
 `;

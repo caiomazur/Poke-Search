@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { StyledSinglePoke } from "../components/styled/SinglePoke.styled";
 import Spinner from "../components/Spinner";
 import PokemonCard from "../components/PokemonCard";
+import { StyledMainTitle } from "../components/styled/MainTitle.styled";
 
 function PokemonDetails() {
   const [pokemon, setPokemon] = useState(null); // State variable to store the details of a single Pokémon
@@ -112,6 +113,13 @@ function PokemonDetails() {
       <StyledSinglePoke>
         {pokemon ? (
           <section className="pokedex-page">
+          <StyledMainTitle>
+            <div className="wrapper">
+              <div className="container">
+                <h1>Pokémon Details</h1>
+              </div>
+            </div>
+          </StyledMainTitle>
             <section className="gameboy">
               <div className="pokedex-screen">
                 <div id="main-pokemon">

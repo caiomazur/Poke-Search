@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StyledSearchBar = styled.div`
-  margin: 3rem 0;
+  margin: 3rem 0 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,15 +13,19 @@ export const StyledSearchBar = styled.div`
     width: 50vw;
   }
 
+
   #search-label {
-    font-size: 2rem;
-    width: 6vw;
+   /*  margin: 0 2rem; */
   }
 
   #search-input {
+    font-family: 'Press Start 2P', cursive;
     font-size: 2rem;
-    width: 40vw;
-    height: 4vh;
+    width: 25vw;
+    height: 5vh;
+    border: 1px solid black;
     border-radius: 2rem;
+    margin: 0 2rem 0 7rem;
+    padding-left: 1.3rem;
   }
 `;

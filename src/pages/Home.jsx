@@ -1,18 +1,24 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import { StyledHome } from "../components/styled/Home.styled";
+import { StyledMainTitle } from "../components/styled/MainTitle.styled";
 
 function Home() {
   return (
     <StyledHome>
       <NavBar />
 
-      <div className="main-title">
-        <h1>Pokédex</h1>
-        <h3>
-          Here you can search and get to know more about your favorite pokémons!
-        </h3>
-      </div>
+      <section className="home-page">
+
+      <StyledMainTitle>
+        <div className="wrapper">
+          <div className="container">
+            <h1>Pokémon</h1>
+          </div>
+        </div>
+      </StyledMainTitle>
+
+      </section>
     </StyledHome>
   );
 }

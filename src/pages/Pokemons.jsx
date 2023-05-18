@@ -5,12 +5,14 @@ import PokemonCard from "../components/PokemonCard";
 import Spinner from "../components/Spinner";
 import { StyledPokemonList } from "../components/styled/PokemonCard.styled";
 import {
+  StyledButtonsContainer,
+  StyledGenButton,
   StyledTypeButton,
-  TypeButtonContainer,
 } from "../components/styled/Button.styled";
 import SearchBar from "../components/SearchBar";
 import NavBar from "../components/NavBar";
 import { StyledPokemons } from "../components/styled/Pokemons.styled";
+import { StyledMainTitle } from "../components/styled/MainTitle.styled";
 
 function Pokemons() {
   // initialize states
@@ -175,66 +177,87 @@ function Pokemons() {
     <StyledPokemons>
       <NavBar />
 
-      <div className="main-title">
-        <h1>Pokédex</h1>
-        <h3>Search by name or type</h3>
-      </div>
+      <div className="pokemons-page">
+        <section className="search-interface">
 
-      <SearchBar searchPokemons={searchPokemons} />
+          <StyledMainTitle>
+            <div className="wrapper">
+              <div className="container">
+                <h1>Pokédex</h1>
+              </div>
+            </div>
+          </StyledMainTitle>
 
-      <TypeButtonContainer>
-        <div className="button-gens-position">
-          {/*           <StyledTypeButton onClick={() => filterByGen(null)}>
+          <SearchBar searchPokemons={searchPokemons} />
+
+        </section>
+
+          <section className="buttons-section">
+
+          <div className="buttons-wrapper">
+            <h2 className="buttons-title-gen">Generation</h2>
+
+
+            <StyledButtonsContainer>
+              <div className="button-gens-position">
+                {/*           <StyledTypeButton onClick={() => filterByGen(null)}>
             All
           </StyledTypeButton> */}
-          {gens.map((genItem) => (
-            <StyledTypeButton
-              key={genItem}
-              onClick={() => filterByGen(genItem)}
-              active={genItem === gen}
-            >
-              {genItem}
-            </StyledTypeButton>
-          ))}
-        </div>
-      </TypeButtonContainer>
-      <TypeButtonContainer>
-        <div className="button-types-position">
-          <StyledTypeButton onClick={() => filterByType(null)}>
-            All
-          </StyledTypeButton>
-          {types.map((typeItem) => (
-            <StyledTypeButton
-              key={typeItem}
-              onClick={() => filterByType(typeItem)}
-              active={typeItem === type}
-            >
-              {typeItem}
-            </StyledTypeButton>
-          ))}
-        </div>
-      </TypeButtonContainer>
+                {gens.map((genItem) => (
+                  <StyledGenButton
+                    key={genItem}
+                    onClick={() => filterByGen(genItem)}
+                    active={genItem === gen}
+                  >
+                    {genItem}
+                  </StyledGenButton>
+                ))}
+              </div>
+            </StyledButtonsContainer>
+          </div>
 
-      <StyledPokemonList>
-        {showPokemons.length > 0 ? (
-          showPokemons.map((pokemon, index) => (
-            <Link
-              className="link"
-              key={index}
-              to={`/${pokemon.name}`} // Pass the name as a route parameter
-            >
-              <PokemonCard
-                name={pokemon.name}
-                image={pokemon.sprites.front_default}
-                imageShiny={pokemon.sprites.front_shiny}
-                types={pokemon.types}
-              />
-            </Link>
-          ))
-        ) : (
-          <Spinner />
-        )}
-      </StyledPokemonList>
+          <div className="buttons-wrapper">
+            <h2 className="buttons-title-type">Type</h2>
+            <StyledButtonsContainer>
+              <div className="button-types-position">
+                <StyledTypeButton onClick={() => filterByType(null)}>
+                  All
+                </StyledTypeButton>
+                {types.map((typeItem) => (
+                  <StyledTypeButton
+                    key={typeItem}
+                    onClick={() => filterByType(typeItem)}
+                    active={typeItem === type}
+                  >
+                    {typeItem}
+                  </StyledTypeButton>
+                ))}
+              </div>
+            </StyledButtonsContainer>
+          </div>
+          </section>
+
+        <StyledPokemonList>
+          {showPokemons.length > 0 ? (
+            showPokemons.map((pokemon, index) => (
+              <Link
+                className="link"
+                key={index}
+                to={`/${pokemon.name}`} // Pass the name as a route parameter
+              >
+                <PokemonCard
+                  name={pokemon.name}
+                  image={pokemon.sprites.front_default}
+                  imageShiny={pokemon.sprites.front_shiny}
+                  types={pokemon.types}
+                />
+              </Link>
+            ))
+          ) : (
+            <Spinner />
+          )}
+        </StyledPokemonList>
+      </div>
     </StyledPokemons>
   );
 }

@@ -4,17 +4,24 @@ export const StyledSinglePoke = styled.main`
   background-image: url("/src/assets/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y;
   background-repeat: repeat-x;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .pokedex-page {
+    width: 90vw;
+    background-color: rgba(223, 223, 223, 0.4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .gameboy {
     width: 50vw;
     height: 60vh;
-    margin-top: 2rem;
+    margin-top: 3rem;
     background-image: url("/src/assets/gameboyAdvanceFrame.png");
     background-size: cover; /* Updated to cover */
     background-position: center;
@@ -58,7 +65,6 @@ export const StyledSinglePoke = styled.main`
     background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-
   }
 
   .main-pokemon-img {
@@ -66,7 +72,7 @@ export const StyledSinglePoke = styled.main`
     background-color: rgba(223, 223, 223, 0.5);
     padding: 0.5rem 1rem;
     border-radius: 30%;
-    border: 1px solid #0075BE;
+    border: 1px solid #0075be;
   }
   .description-info {
     background-image: url("/src/assets/text-box-pokmon.png");
@@ -83,11 +89,13 @@ export const StyledSinglePoke = styled.main`
   }
 
   .description-info p {
-    font-size: 1.2rem;
-    width: 70%;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    width: 80%;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding-top: 0.5rem;
   }
 
   .type-info {
@@ -114,12 +122,11 @@ export const StyledSinglePoke = styled.main`
     text-transform: capitalize;
     -webkit-text-fill-color: #ffcc00;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #0075BE;
+    -webkit-text-stroke-color: #0075be;
     background-color: rgba(223, 223, 223, 0.7);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #0075BE;
-    
+    border: 1px solid #0075be;
   }
 
   .evolution-chain-container {
@@ -140,16 +147,16 @@ export const StyledSinglePoke = styled.main`
     width: 150px;
   }
 
-  .evolution-name{
-    color: #ffcc00;
-    font-size: 2.5rem;
+  .evolution-name {
+    color: #0075be;
+    font-size: 2rem;
     text-transform: capitalize;
-    -webkit-text-fill-color: #ffcc00;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: #0075BE;
+
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: #000000;
     background-color: rgba(223, 223, 223, 0.7);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #0075BE;
+    border: 1px solid #0075be;
   }
 `;

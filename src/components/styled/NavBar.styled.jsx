@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   width: 100vw;
-
   background-color: #000000;
 
 
