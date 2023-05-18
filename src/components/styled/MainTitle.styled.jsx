@@ -6,7 +6,7 @@ export const StyledMainTitle = styled.div`
 .wrapper {
   background: transparent;
   line-height: 1;
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 1rem 0;
 }
 
 h1 {
@@ -30,6 +30,12 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+
+  &:hover {
+    text-shadow: -20px -20px 0px #fb1b1b, -30px -30px 0px #ffcc00,
+      -40px -40px 0px rgb(0 117 190);
+    transition: all ease-in-out 250ms;
+  }
 }
 
 .container {

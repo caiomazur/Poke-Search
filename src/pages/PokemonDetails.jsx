@@ -113,17 +113,20 @@ function PokemonDetails() {
       <StyledSinglePoke>
         {pokemon ? (
           <section className="pokedex-page">
-          <StyledMainTitle>
-            <div className="wrapper">
-              <div className="container">
-                <h1>Pokémon Details</h1>
+            <StyledMainTitle>
+              <div className="wrapper">
+                <div className="container">
+                  <h1>Pokémon Details</h1>
+                </div>
               </div>
-            </div>
-          </StyledMainTitle>
+              <hr />
+            </StyledMainTitle>
             <section className="gameboy">
               <div className="pokedex-screen">
                 <div id="main-pokemon">
-                  <h4><span className="main-pokemon-title">{pokemon.name}</span></h4>
+                  <h4>
+                    <span className="main-pokemon-title">{pokemon.name}</span>
+                  </h4>
                   <img
                     className="main-pokemon-img"
                     src={
@@ -145,27 +148,27 @@ function PokemonDetails() {
             </section>
 
             <section className="additional-info">
+              <h2 className="add-info-title">Evolution Line</h2>
 
-            <h2 className="add-info-title">Evolution Line</h2>
-  
               {evolutionChain.length > 0 && (
                 <div className="evolution-chain-container">
-                  
-                    {evolutionChain.map((evolution) => (
-                      <div
-                        key={evolution.species.name}
-                        className="evolution-pokemon"
-                      >
-                        <img
-                          src={evolution.imageSrc}
-                          alt={evolution.species.name}
-                        />
-                        <h3 className="evolution-name">{evolution.species.name}</h3>
-                      </div>
-                    ))}
-                  </div>
+                  {evolutionChain.map((evolution) => (
+                    <div
+                      key={evolution.species.name}
+                      className="evolution-pokemon"
+                    >
+                      <img
+                        src={evolution.imageSrc}
+                        alt={evolution.species.name}
+                      />
+                      <h3 className="evolution-name">
+                        {evolution.species.name}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
               )}
-            {/*   <h4 className="type-info">
+              {/*   <h4 className="type-info">
                 Type:
                 {pokemon.types.map((type) => (
                   <span key={type.slot}> {type.type.name} </span>

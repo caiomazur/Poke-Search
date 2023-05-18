@@ -8,8 +8,6 @@ function NavBar() {
         <ul>
             <li className="nav-item"><NavLink to="/"><img className='logo' src="/images/pokeLogo.png" alt="pokeball-logo"/></NavLink></li>
             <li className="nav-item"><NavLink to="/pokemons">Pokédex</NavLink></li>
-            <li className="nav-item"><NavLink to="#">Nav Item</NavLink></li>
-            <li className="nav-item"><NavLink to="#">Nav Item</NavLink></li>
         </ul>
     </StyledNavBar>
   )

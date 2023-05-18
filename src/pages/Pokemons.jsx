@@ -185,6 +185,7 @@ function Pokemons() {
                 <h1>Pokédex</h1>
               </div>
             </div>
+            <hr />
           </StyledMainTitle>
 
           <SearchBar searchPokemons={searchPokemons} />

@@ -3,17 +3,17 @@ import styled from "styled-components";
 export const StyledNavBar = styled.nav`
   width: 100vw;
   background-color: #000000;
-
+  border-bottom: 3px solid #0075BE;
 
   ul {
-    height: 7vh;
+    height: 5vh;
+    width: 30vw;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: 0;
     padding: 0;
-    border-bottom: 3px solid #0075BE;
     
   }
 

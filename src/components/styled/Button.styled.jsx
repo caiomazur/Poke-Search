@@ -51,7 +51,7 @@ export const StyledTypeButton = styled.button`
   }
 `;
 
-export const StyledSearchButton = styled.button`
+export const StyledSearchButton = styled.div`
   border: none;
 
   .search-icon {
