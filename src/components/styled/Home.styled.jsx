@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.section`
-  background-image: url("/images/7pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
+  background-image: url("/public/images/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y;
   background-repeat: repeat-x;
   display: flex;
