@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSinglePoke = styled.main`
-  background-image: url("/src/assets/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
+  background-image: url("/images/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y;
   background-repeat: repeat-x;
   display: flex;
@@ -22,7 +22,7 @@ export const StyledSinglePoke = styled.main`
     width: 50vw;
     height: 60vh;
     margin-top: 3rem;
-    background-image: url("/src/assets/gameboyAdvanceFrame.png");
+    background-image: url("/images/gameboyAdvanceFrame.png");
     background-size: cover; /* Updated to cover */
     background-position: center;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@ export const StyledSinglePoke = styled.main`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-image: url("/src/assets/cityBackground.gif");
+    background-image: url("/images/cityBackground.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,7 +75,7 @@ export const StyledSinglePoke = styled.main`
     border: 1px solid #0075be;
   }
   .description-info {
-    background-image: url("/src/assets/text-box-pokmon.png");
+    background-image: url("/images/text-box-pokmon.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;

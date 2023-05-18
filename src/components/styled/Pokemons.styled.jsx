@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledPokemons = styled.main`
-  background-image: url("/src/assets/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
+  background-image: url("/images/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y repeat-x;
 
   display: flex;
@@ -18,7 +18,6 @@ export const StyledPokemons = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-
   }
 
   .search-interface {
@@ -29,7 +28,7 @@ export const StyledPokemons = styled.main`
   }
 
   .buttons-title-gen {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     width: 5vw;
     text-align: center;
     margin-left: 6rem;
@@ -37,12 +36,11 @@ export const StyledPokemons = styled.main`
   }
 
   .buttons-title-type {
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     width: 5vw;
     text-align: center;
     margin-left: 6rem;
     font-size: 1.2rem;
-
   }
 
   .warning {
@@ -51,7 +49,7 @@ export const StyledPokemons = styled.main`
   }
 
   .buttons-section {
-    background-image: url("/src/assets/text-box-pokmon.png");
+    background-image: url("/images/text-box-pokmon.png");
     background-size: 73% 130%;
     background-repeat: no-repeat;
     background-position: center;

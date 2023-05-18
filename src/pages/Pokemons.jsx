@@ -179,7 +179,6 @@ function Pokemons() {
 
       <div className="pokemons-page">
         <section className="search-interface">
-
           <StyledMainTitle>
             <div className="wrapper">
               <div className="container">
@@ -189,14 +188,11 @@ function Pokemons() {
           </StyledMainTitle>
 
           <SearchBar searchPokemons={searchPokemons} />
-
         </section>
 
-          <section className="buttons-section">
-
+        <section className="buttons-section">
           <div className="buttons-wrapper">
             <h2 className="buttons-title-gen">Generation</h2>
-
 
             <StyledButtonsContainer>
               <div className="button-gens-position">
@@ -235,7 +231,7 @@ function Pokemons() {
               </div>
             </StyledButtonsContainer>
           </div>
-          </section>
+        </section>
 
         <StyledPokemonList>
           {showPokemons.length > 0 ? (

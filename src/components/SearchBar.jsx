@@ -33,7 +33,7 @@ function SearchBar({ searchPokemons }) {
         <StyledSearchButton>
           {" "}
           <img
-            src="/src/assets/detectivePikachu.png"
+            src="/images/detectivePikachu.png"
             alt="Detective-Pikachu-Search-Icon"
             className="search-icon"
           />
