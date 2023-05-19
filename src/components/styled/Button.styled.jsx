@@ -17,11 +17,12 @@ export const StyledButtonsContainer = styled.div`
 
 export const StyledGenButton = styled.button`
   font-family: "Press Start 2P", cursive;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   border: none;
   border-radius: 1rem;
   margin: 0.3rem 0.1rem;
   width: 4.7vw;
+  font-size: 1rem;
   text-align: center;
   text-transform: capitalize;
   transition: all 0.2s ease-in-out;
@@ -34,7 +35,7 @@ export const StyledGenButton = styled.button`
 
 export const StyledTypeButton = styled.button`
   font-family: "Press Start 2P", cursive;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 1rem 1rem;
   border: none;
   border-radius: 1rem;

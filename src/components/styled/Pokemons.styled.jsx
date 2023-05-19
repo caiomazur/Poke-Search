@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledPokemons = styled.main`
   background-image: url("/images/pattern_circles-7_1_2_0-0_0_1__ffffff_dedede.png");
   background-repeat: repeat-y repeat-x;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -50,11 +51,17 @@ export const StyledPokemons = styled.main`
 
   .buttons-section {
     background-image: url("/images/text-box-pokmon.png");
-    background-size: 73% 130%;
+    background-size: 70% 130%;
     background-repeat: no-repeat;
     background-position: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.5rem;
     padding: 4rem 1rem 4rem 0;
+  }
+
+  .footer p {
+    font-size: 1rem;
+    font-family: "Press Start 2P", cursive;
   }
 `;

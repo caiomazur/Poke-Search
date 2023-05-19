@@ -11,10 +11,10 @@ export const StyledPokemonCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20vw;
-    height: 45vh;
+    width: 15vw;
+    height: 38vh;
     margin: 1rem;
-    border: 1px solid #0075BE;
+    border: 1px solid #0075be;
     border-radius: 2rem;
     transition: transform 0.3s ease-in-out;
   }
@@ -22,7 +22,6 @@ export const StyledPokemonCard = styled.div`
   .poke-card:hover {
     transform: scale(1.05);
     background-color: rgba(255, 204, 0, 0.2);
-    
   }
 
   .poke-image {
@@ -34,6 +33,23 @@ export const StyledPokemonCard = styled.div`
     font-size: 2rem;
     text-decoration: none;
     text-transform: capitalize;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .poke-info h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .poke-info h4 {
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: "Press Start 2P", cursive;
   }
 `;
 

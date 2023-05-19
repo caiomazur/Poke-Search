@@ -32,8 +32,8 @@ h1 {
   color: transparent;
 
   &:hover {
-    text-shadow: -20px -20px 0px #fb1b1b, -30px -30px 0px #ffcc00,
-      -40px -40px 0px rgb(0 117 190);
+    text-shadow: -5px -5px 0px #fb1b1b, -10px -10px 0px #ffcc00,
+      -15px -15px 0px rgb(0 117 190);
     transition: all ease-in-out 250ms;
   }
 }

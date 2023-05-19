@@ -255,6 +255,9 @@ function Pokemons() {
           )}
         </StyledPokemonList>
       </div>
+      <footer className="footer">
+        <p>Developed by Caio Mazur</p>
+      </footer>
     </StyledPokemons>
   );
 }

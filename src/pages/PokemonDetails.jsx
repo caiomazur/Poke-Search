@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { StyledSinglePoke } from "../components/styled/SinglePoke.styled";
 import Spinner from "../components/Spinner";
@@ -15,6 +15,8 @@ function PokemonDetails() {
   const [description, setDescription] = useState(""); // State variable to store the English description of the Pokémon
   const [isJumping, setIsJumping] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false); // State variable to track if the image is flipped
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
 
   // Function to fetch the image of an evolution in the evolution chain
   const getEvolutionImage = async (evolution) => {
@@ -40,6 +42,8 @@ function PokemonDetails() {
         `https://pokeapi.co/api/v2/pokemon/${name}`
       );
       setPokemon(response.data); // Set the fetched Pokémon data
+      setWeight(response.data.weight); // Set the weight state
+      setHeight(response.data.height); // Set the height state
 
       const speciesResponse = await axios.get(
         `https://pokeapi.co/api/v2/pokemon-species/${response.data.id}`
@@ -180,17 +184,32 @@ function PokemonDetails() {
                   ))}
                 </div>
               )}
-              {/*   <h4 className="type-info">
-                Type:
-                {pokemon.types.map((type) => (
-                  <span key={type.slot}> {type.type.name} </span>
-                ))}
-              </h4> */}
+              <article className="main-poke-info">
+                <h4 className="type-info">
+                  Type:
+                  {pokemon.types.map((type) => (
+                    <span key={type.slot}> {type.type.name} </span>
+                  ))}
+                </h4>
+                <h4>Weight: {weight / 10} kg</h4>
+                <h4>Height: {height / 10} m</h4>
+              </article>
             </section>
+            <Link to="/pokemons">
+              <img
+                className="pikachu-back-icon"
+                src={pokemon.sprites.back_default}
+                alt={pokemon.name}
+              />
+              <p className="back-to">Back to Pokédex</p>
+            </Link>
           </section>
         ) : (
           <Spinner />
         )}
+        <footer className="footer">
+          <p>Developed by Caio Mazur</p>
+        </footer>
       </StyledSinglePoke>
     </main>
   );

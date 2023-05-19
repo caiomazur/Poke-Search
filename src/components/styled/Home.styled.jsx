@@ -7,9 +7,11 @@ export const StyledHome = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 
   .home-page {
     width: 90vw;
+    height: 90vh;
     background-color: rgba(223, 223, 223, 0.5);
     display: flex;
     flex-direction: column;
@@ -61,6 +63,7 @@ export const StyledHome = styled.section`
   }
 
   .pikachu-back-icon {
+    background: transparent;
     width: 12vw;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
@@ -72,20 +75,28 @@ export const StyledHome = styled.section`
   }
 
   @keyframes tilt {
-    0% {
-      transform: rotate(0deg);
+    0%,
+    7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
     }
     25% {
-      transform: rotate(-10deg);
+      transform: rotateZ(-10deg);
     }
-    50% {
-      transform: rotate(-0deg);
+    30% {
+      transform: rotateZ(6deg);
     }
-    75% {
-      transform: rotate(10deg);
+    35% {
+      transform: rotateZ(-4deg);
     }
+    40%,
     100% {
-      transform: rotate(0deg);
+      transform: rotateZ(0);
     }
   }
 
