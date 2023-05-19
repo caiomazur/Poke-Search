@@ -12,7 +12,9 @@ export const StyledPokemonCard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 15vw;
-    height: 38vh;
+    min-width: 230px;
+    height: 30vh;
+    min-height: 230px;
     margin: 1rem;
     border: 1px solid #0075be;
     border-radius: 2rem;

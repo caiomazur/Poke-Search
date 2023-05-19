@@ -4,13 +4,13 @@ export const StyledSearchBar = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 
   .search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50vw;
+    width: 50%;
   }
 
 
@@ -21,7 +21,7 @@ export const StyledSearchBar = styled.div`
   #search-input {
     font-family: 'Press Start 2P', cursive;
     font-size: 2rem;
-    width: 25vw;
+    width: 50%;
     height: 5vh;
     border: 1px solid black;
     border-radius: 2rem;

@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const StyledButtonsContainer = styled.div`
-  width: 50vw;
+  width: 55%;
+  min-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .button-types-position {
-    width: 40vw;
+    width: 90%;
+    min-width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,11 +19,12 @@ export const StyledButtonsContainer = styled.div`
 
 export const StyledGenButton = styled.button`
   font-family: "Press Start 2P", cursive;
-  padding: 0.8rem 0;
+  padding: 1rem 3rem;
   border: none;
   border-radius: 1rem;
   margin: 0.3rem 0.1rem;
-  width: 4.7vw;
+  width: 12%;
+  min-width: 60px;
   font-size: 1rem;
   text-align: center;
   text-transform: capitalize;
@@ -40,7 +43,8 @@ export const StyledTypeButton = styled.button`
   border: none;
   border-radius: 1rem;
   margin: 0.3rem 0.1rem;
-  width: 7vw;
+  width: 20%;
+  min-width: 100px;
   text-align: center;
   text-transform: capitalize;
   transition: all 0.2s ease-in-out;

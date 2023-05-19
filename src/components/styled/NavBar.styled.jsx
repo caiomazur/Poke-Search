@@ -26,10 +26,11 @@ export const StyledNavBar = styled.nav`
     text-decoration: none;
     color: #FFFFFF;
     font-size: 1.2rem;
+    margin: 1rem;
   }
 
   .logo {
     width: 3.5rem;
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
 `;

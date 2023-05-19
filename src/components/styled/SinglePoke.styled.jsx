@@ -20,9 +20,10 @@ export const StyledSinglePoke = styled.main`
   .gameboy {
     width: 60vw;
     height: 72vh;
+    min-width: 600px;
     margin-top: 3rem;
     background-image: url("/images/gameboyAdvanceFrame.png");
-    background-size: cover; /* Updated to cover */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
@@ -33,6 +34,7 @@ export const StyledSinglePoke = styled.main`
   .pokedex-screen {
     width: 49%;
     height: 77%;
+    min-width: 450px;
 
     border-radius: 4rem;
     text-align: center;
@@ -68,6 +70,7 @@ export const StyledSinglePoke = styled.main`
 
   .main-pokemon-img {
     width: 50%;
+    min-width: 180px;
     background-color: rgba(223, 223, 223, 0.5);
     padding: 0.5rem 1rem;
     border-radius: 30%;
@@ -99,6 +102,7 @@ export const StyledSinglePoke = styled.main`
     margin-right: auto;
     width: 26vw;
     height: 20vh;
+    min-width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,7 +111,7 @@ export const StyledSinglePoke = styled.main`
   .description-info p {
     font-family: "Press Start 2P", cursive;
     line-height: 1.5;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     width: 80%;
     text-align: center;
     margin: 0;
@@ -171,6 +175,7 @@ export const StyledSinglePoke = styled.main`
 
   .main-poke-info {
     padding: 5rem 6rem;
+    line-height: 1.5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,8 +198,7 @@ export const StyledSinglePoke = styled.main`
     background: transparent;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
-    width: 10vw;
-    padding-left: 1.5rem;
+    width: 100%;
   }
 
   .pikachu-back-icon:hover {

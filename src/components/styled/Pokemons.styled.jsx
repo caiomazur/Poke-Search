@@ -30,17 +30,17 @@ export const StyledPokemons = styled.main`
 
   .buttons-title-gen {
     font-family: "Press Start 2P", cursive;
-    width: 5vw;
+    width: 7%;
+    margin-left: 1rem;
     text-align: center;
-    margin-left: 6rem;
     font-size: 1.2rem;
   }
 
   .buttons-title-type {
     font-family: "Press Start 2P", cursive;
-    width: 5vw;
+    width: 7%;
+    margin-left: 1rem;
     text-align: center;
-    margin-left: 6rem;
     font-size: 1.2rem;
   }
 
@@ -51,13 +51,13 @@ export const StyledPokemons = styled.main`
 
   .buttons-section {
     background-image: url("/images/text-box-pokmon.png");
-    background-size: 70% 130%;
+    background-size: 75% 130%;
     background-repeat: no-repeat;
     background-position: center;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.5rem;
-    padding: 4rem 1rem 4rem 0;
+    padding: 5rem 1rem 5rem 0;
   }
 
   .footer p {

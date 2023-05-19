@@ -40,6 +40,7 @@ export const StyledHome = styled.section`
     font-size: 1.3rem;
     margin: 1rem;
     width: 40%;
+    min-width: 150px;
     padding: 2rem;
   }
 
@@ -53,6 +54,7 @@ export const StyledHome = styled.section`
   .poke-search-icon,
   .pokedex-icon {
     width: 10vw;
+    min-width: 125px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
   }
@@ -64,7 +66,7 @@ export const StyledHome = styled.section`
 
   .pikachu-back-icon {
     background: transparent;
-    width: 12vw;
+    width: 17rem;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
   }
