@@ -237,4 +237,6 @@ export const StyledSinglePoke = styled.main`
     font-size: 1rem;
     font-family: "Press Start 2P", cursive;
   }
+
+  
 `;

@@ -12,9 +12,9 @@ export const StyledPokemonCard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 15vw;
-    min-width: 230px;
+    min-width: 325px;
     height: 30vh;
-    min-height: 230px;
+    min-height: 325px;
     margin: 1rem;
     border: 1px solid #0075be;
     border-radius: 2rem;
@@ -27,7 +27,7 @@ export const StyledPokemonCard = styled.div`
   }
 
   .poke-image {
-    width: 150px;
+    width: 225px;
   }
 
   .poke-info {
@@ -53,6 +53,12 @@ export const StyledPokemonCard = styled.div`
     text-transform: capitalize;
     font-family: "Press Start 2P", cursive;
   }
+
+  @media (max-width: 760px) {
+    .poke-card {
+      width: 100%;
+    }
+  }
 `;
 
 export const StyledPokemonList = styled.section`
@@ -66,5 +72,9 @@ export const StyledPokemonList = styled.section`
   .link {
     text-decoration: none;
     color: #000000;
+  }
+
+  @media (max-width: 760px) {
+    width: 100vw;
   }
 `;

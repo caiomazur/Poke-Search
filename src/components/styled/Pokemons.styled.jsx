@@ -56,12 +56,55 @@ export const StyledPokemons = styled.main`
     background-position: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 5rem 1rem 5rem 0;
   }
 
   .footer p {
     font-size: 1rem;
     font-family: "Press Start 2P", cursive;
+  }
+
+  @media (max-width: 1333px) {
+    .buttons-title-gen {
+      display: none;
+    }
+
+    .buttons-title-type {
+      display: none;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .pokemons-page {
+      width: 100vw;
+    }
+
+    .buttons-wrapper {
+      width: 100%;
+    }
+
+    .buttons-title-gen {
+      display: none;
+    }
+
+    .buttons-title-type {
+      display: none;
+    }
+
+    .buttons-section {
+      background-size: 80% 125%;
+      padding: 5rem 1rem 5rem 0;
+    }
+    @media (max-width: 660px) {
+      .buttons-section {
+        background: none;
+        background-color: rgba(10, 40, 95, 0.2);
+        padding: 2rem;
+        width: 70%;
+        min-width: 325px;
+        border-radius: 2rem;
+      }
+    }
   }
 `;

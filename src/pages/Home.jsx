@@ -38,22 +38,24 @@ function Home() {
               />
             </Link>
           </div>
-          <article className="home-info">
+          <article class="home-info">
             <p>
-              Welcome to the Poké Search app! Here, you can search for any
-              Pokémon by generation or type.
+              Welcome to the Poké Search app! Catch 'em all without breaking a
+              sweat.
             </p>
             <p>
-              To get started, navigate to the "Pokédex" page using the
-              navigation bar above or clicking in any icon.
+              To get started, head over to the "Pokédex" page in the navigation
+              bar above or click on any icon.
             </p>
           </article>
           <Link to="/pokemons">
-            <img
-              src="/images/pokemonIcon5.png"
-              alt="Pokedéx-Icon"
-              className="pikachu-back-icon"
-            />
+            <div className="pikachu-container">
+              <img
+                src="/images/pokemonIcon5.png"
+                alt="Pokedéx-Icon"
+                className="pikachu-back-icon"
+              />
+            </div>
           </Link>
         </main>
       </section>

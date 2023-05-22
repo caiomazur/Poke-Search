@@ -27,7 +27,9 @@ export const StyledHome = styled.section`
   }
 
   .home-info {
-    width: 70vw;
+    width: 100%;
+    min-width: 200px;
+    max-height: 180px;
     text-align: center;
     line-height: 1.5;
     display: flex;
@@ -37,9 +39,9 @@ export const StyledHome = styled.section`
 
   .home-info p {
     font-family: "Press Start 2P", cursive;
-    font-size: 1.3rem;
-    margin: 1rem;
+    font-size: 1.5rem;
     width: 40%;
+    height: 70%;
     min-width: 150px;
     padding: 2rem;
   }
@@ -64,9 +66,17 @@ export const StyledHome = styled.section`
     transform: scale(1.2);
   }
 
+  .pikachu-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .pikachu-back-icon {
+    width: 30%;
+    min-width: 125px;
+    margin-top: 1rem;
     background: transparent;
-    width: 17rem;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
   }
@@ -109,5 +119,30 @@ export const StyledHome = styled.section`
 
   hr {
     color: black;
+  }
+
+  @media (max-width: 760px) {
+    .home-page {
+      width: 100vw;
+    }
+
+    .home-info {
+      line-height: 1.3;
+    }
+
+    .home-info p {
+      font-size: 1.2rem;
+      min-width: 140px;
+      margin: 0rem;
+    }
+
+    .poke-search-icon,
+    .pokedex-icon {
+      min-width: 125px;
+    }
+
+    .pikachu-back-icon {
+      min-width: 150px;
+    }
   }
 `;
