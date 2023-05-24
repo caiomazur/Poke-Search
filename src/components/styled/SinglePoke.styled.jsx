@@ -94,8 +94,9 @@ export const StyledSinglePoke = styled.main`
     }
 
     @media (max-width: 450px) {
-      width: 48%;
-      max-height: 130px;
+      width: 55%;
+      max-height: 170px;
+      margin-bottom: 20em;
     }
   }
 
@@ -114,7 +115,7 @@ export const StyledSinglePoke = styled.main`
     }
 
     @media (max-width: 450px) {
-      margin-top: 16rem;
+      margin-top: 18rem;
     }
   }
 
@@ -135,14 +136,13 @@ export const StyledSinglePoke = styled.main`
 
     @media (max-width: 450px) {
       font-size: 1.9rem;
-    padding: 0.2rem 0.7rem;
-
+      padding: 0.2rem 0.7rem;
     }
   }
 
   .main-pokemon-img {
-    width: 50%;
-    min-width: 180px;
+    width: 45%;
+    min-width: 175px;
     background-color: rgba(223, 223, 223, 0.5);
     padding: 0.5rem 1rem;
     border-radius: 30%;
@@ -208,8 +208,8 @@ export const StyledSinglePoke = styled.main`
     }
 
     @media (max-width: 450px) {
-      margin-bottom: 80%;
-      height: 12vh;
+      margin-bottom: 97%;
+      height: 11vh;
       width: 100%;
     }
   }
@@ -231,8 +231,8 @@ export const StyledSinglePoke = styled.main`
     }
 
     @media (max-width: 450px) {
-      font-size: 0.6rem;
-      width: 88%;
+      font-size: 0.5rem;
+      width: 85%;
     }
   }
 
@@ -279,7 +279,7 @@ export const StyledSinglePoke = styled.main`
     width: 225px;
 
     @media (max-width: 650px) {
-      width: 225px;
+      width: 150px;
     }
   }
 
@@ -324,7 +324,6 @@ export const StyledSinglePoke = styled.main`
     @media (max-width: 450px) {
       width: 45%;
       padding: 4rem 6rem;
-
     }
   }
 
@@ -340,8 +339,7 @@ export const StyledSinglePoke = styled.main`
       font-size: 1.2rem;
       width: 25%;
       margin: 1rem;
-      padding 1em;
-
+      padding: 1em;
     }
 
     @media (max-width: 450px) {
@@ -354,7 +352,7 @@ export const StyledSinglePoke = styled.main`
     background: transparent;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
-    width: 225px;
+    width: 175px;
   }
 
   .pikachu-back-icon:hover {

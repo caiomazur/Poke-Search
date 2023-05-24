@@ -12,9 +12,9 @@ export const StyledPokemonCard = styled.div`
     flex-direction: column;
     align-items: center;
     width: 15vw;
-    min-width: 325px;
+    min-width: 250px;
     height: 30vh;
-    min-height: 325px;
+    min-height: 275px;
     margin: 1rem;
     border: 1px solid #0075be;
     border-radius: 2rem;
@@ -27,7 +27,7 @@ export const StyledPokemonCard = styled.div`
   }
 
   .poke-image {
-    width: 225px;
+    width: 180px;
   }
 
   .poke-info {
@@ -58,6 +58,15 @@ export const StyledPokemonCard = styled.div`
     .poke-card {
       width: 100%;
     }
+
+    .poke-info h3 {
+    font-size: 1.2rem;
+  
+  }
+
+  .poke-info h4 {
+    font-size: 0.8rem;
+  }
   }
 `;
 
