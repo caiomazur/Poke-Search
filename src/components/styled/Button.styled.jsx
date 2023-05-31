@@ -120,6 +120,13 @@ export const StyledTypeButton = styled.button`
     min-width: 85px;
     padding: 1rem;
   }
+
+  @media (max-width: 400px) {
+    min-width: 60px;
+    padding: 1rem;
+    font-size: 0.9rem;
+width: 30%;
+  }
 `;
 
 export const StyledSearchButton = styled.div`

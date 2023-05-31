@@ -208,8 +208,8 @@ export const StyledSinglePoke = styled.main`
     }
 
     @media (max-width: 450px) {
-      margin-bottom: 97%;
-      height: 11vh;
+      margin-bottom: 110%;
+      height: 15vh;
       width: 100%;
     }
   }
@@ -227,12 +227,13 @@ export const StyledSinglePoke = styled.main`
       font-size: 0.7rem;
       line-height: 1.3;
       padding-top: 0;
-      width: 85%;
+      width: 83%;
     }
 
     @media (max-width: 450px) {
-      font-size: 0.5rem;
-      width: 85%;
+      font-size: 0.7rem;
+      line-height: 1.2;
+      width: 83%;
     }
   }
 
@@ -272,7 +273,7 @@ export const StyledSinglePoke = styled.main`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 3em;
+    margin: 2em;
   }
 
   .evolution-pokemon img {
@@ -323,7 +324,7 @@ export const StyledSinglePoke = styled.main`
 
     @media (max-width: 450px) {
       width: 45%;
-      padding: 4rem 6rem;
+      padding: 4rem 7rem;
     }
   }
 
@@ -338,13 +339,14 @@ export const StyledSinglePoke = styled.main`
     @media (max-width: 650px) {
       font-size: 1.2rem;
       width: 25%;
-      margin: 1rem;
+      margin: 1em;
       padding: 1em;
     }
 
     @media (max-width: 450px) {
       font-size: 1rem;
       text-align: center;
+      width: 25%;
     }
   }
 

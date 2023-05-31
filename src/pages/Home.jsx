@@ -44,8 +44,7 @@ function Home() {
               sweat.
             </p>
             <p>
-              To get started, head over to the "Pokédex" page in the navigation
-              bar above or click on any icon.
+            Get ready to embark on an exciting journey. Start by selecting any icon.
             </p>
           </article>
           <Link to="/pokemons">

@@ -106,5 +106,12 @@ export const StyledPokemons = styled.main`
         border-radius: 2rem;
       }
     }
+    @media (max-width: 400px) {
+      .buttons-section {
+        padding: 2rem;
+        width: 80%;
+        min-width: 0;
+      }
+    }
   }
 `;
